@@ -3,9 +3,9 @@ set -euo pipefail
 
 EXPECTED_DOMAIN="benchmarks.teamstation.dev"
 BAD_DOMAIN_1="pricing.teamstation.dev"
-BAD_DOMAIN_2="benchmark.teamstation.dev"
+BAD_DOMAIN_2="teamstaiton.dev"
 
-required=(
+FILES=(
   "public/robots.txt"
   "public/sitemap.xml"
   "out/robots.txt"
@@ -14,21 +14,22 @@ required=(
   "build/sitemap.xml"
 )
 
-for file in "${required[@]}"; do
-  if [[ ! -f "$file" ]]; then
-    echo "Missing required file: $file"
+for f in "${FILES[@]}"; do
+  if [[ ! -f "$f" ]]; then
+    echo "Missing expected file: $f"
     exit 1
   fi
 done
 
-if ! rg -n "$EXPECTED_DOMAIN" public/robots.txt public/sitemap.xml out/robots.txt out/sitemap.xml build/robots.txt build/sitemap.xml >/dev/null; then
-  echo "Expected domain '$EXPECTED_DOMAIN' not found in static assets"
+if grep -RIn "$BAD_DOMAIN_1\|$BAD_DOMAIN_2" "${FILES[@]}" >/dev/null; then
+  echo "Domain verification failed: found bad domain reference in sitemap/robots files."
+  grep -RIn "$BAD_DOMAIN_1\|$BAD_DOMAIN_2" "${FILES[@]}"
   exit 1
 fi
 
-if rg -n "$BAD_DOMAIN_1|$BAD_DOMAIN_2" public/robots.txt public/sitemap.xml out/robots.txt out/sitemap.xml build/robots.txt build/sitemap.xml >/dev/null; then
-  echo "Found an invalid domain reference in static assets"
+if ! grep -RIn "$EXPECTED_DOMAIN" "${FILES[@]}" >/dev/null; then
+  echo "Domain verification failed: expected domain '$EXPECTED_DOMAIN' was not found."
   exit 1
 fi
 
-echo "Static domain verification passed for $EXPECTED_DOMAIN"
+echo "Domain verification passed for static output."

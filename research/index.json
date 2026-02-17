@@ -1,0 +1,206 @@
+[
+  {
+    "id": "ssrn-5745463",
+    "title": "AI & Nearshore Teams: Who Gets Replaced",
+    "authors": [],
+    "year": null,
+    "doi": null,
+    "source_url": null,
+    "asset_url": "/ssrn-5745463.pdf",
+    "summary": "=== PAGE 1 === AI & Nearshore Teams: Who Gets Replaced and Why A research-backed model of AI in nearshore software teams: who gets replaced, how incentives change, and what this means for CTOs building reliable pipelines. TeamStation AI Research Paper Draft v1.0 November 2025 Authors Lonnie McRorey* — CEO & Co-Founder, TeamStation AI TeamStation AI Research Division *Corresponding author: lonnie@teamstation.io Table...",
+    "key_findings": [],
+    "methodology_relevance": null,
+    "extraction": {
+      "tool": "pypdf",
+      "extracted_text_path": "research/extracted/ssrn-5745463.txt",
+      "page_count_detected": 24
+    },
+    "status": "needs_research_review",
+    "ingested_at": "2026-02-17"
+  },
+  {
+    "id": "ssrn-5433397",
+    "title": "AxiomCortex™ : Scientific",
+    "authors": [],
+    "year": null,
+    "doi": null,
+    "source_url": null,
+    "asset_url": "/ssrn-5433397.pdf",
+    "summary": "=== PAGE 1 === AxiomCortex™ : Scientific R&D Report Authors TeamStation AI Research & Development Division Institutional Affiliation TeamStation AI Correspondence One Seaport Square, 77 Sleeper St 5830 E 2nd, St Ste 7000 #14687, Boston, MA 02210 lonnie@teamstation.io Website TeamStation AI Abstract The following report details the Axiom Cortex, a proprietary Cognitive AI-driven engine integrated within the TeamStatio...",
+    "key_findings": [],
+    "methodology_relevance": null,
+    "extraction": {
+      "tool": "pypdf",
+      "extracted_text_path": "research/extracted/ssrn-5433397.txt",
+      "page_count_detected": 32
+    },
+    "status": "needs_research_review",
+    "ingested_at": "2026-02-17"
+  },
+  {
+    "id": "ssrn-5433476",
+    "title": "AxiomCortex™ : Scientific",
+    "authors": [],
+    "year": null,
+    "doi": null,
+    "source_url": null,
+    "asset_url": "/ssrn-5433476.pdf",
+    "summary": "=== PAGE 1 === AxiomCortex™ : Scientific R&D Report Authors TeamStation AI Research & Development Division Institutional Affiliation TeamStation AI Correspondence One Seaport Square, 77 Sleeper St 5830 E 2nd, St Ste 7000 #14687, Boston, MA 02210 lonnie@teamstation.io Website TeamStation AI Abstract The following report details the Axiom Cortex, a proprietary Cognitive AI-driven engine integrated within the TeamStatio...",
+    "key_findings": [],
+    "methodology_relevance": null,
+    "extraction": {
+      "tool": "pypdf",
+      "extracted_text_path": "research/extracted/ssrn-5433476.txt",
+      "page_count_detected": 32
+    },
+    "status": "needs_research_review",
+    "ingested_at": "2026-02-17"
+  },
+  {
+    "id": "engineering-doctrine-research-team-topologies",
+    "title": "Engineering Doctrine research   team topologies",
+    "authors": [],
+    "year": null,
+    "doi": null,
+    "source_url": null,
+    "asset_url": "/Engineering Doctrine research - team topologies.txt",
+    "summary": "﻿Skip to content TeamStation AI Engineering Doctrine System Overview The 7 Pillars teams Core * Abstract & Thesis * Question * How does reliability scale? * Reality * Multiplicatively. One failure zeroes the chain. * Doctrine * The O-Ring Invariant. Deep Dive * 1. Sequential Reality * Question * What governs effort in a chain? * Reality * Strict Complementarity: p_{k+2} - p_{k+1} > p_{k+1} - p_k. * Doctrine * Sequent...",
+    "key_findings": [],
+    "methodology_relevance": null,
+    "extraction": {
+      "tool": "plaintext",
+      "extracted_text_path": "research/extracted/engineering-doctrine-research-team-topologies.txt",
+      "page_count_detected": null
+    },
+    "status": "needs_research_review",
+    "ingested_at": "2026-02-17"
+  },
+  {
+    "id": "ssrn-5188490",
+    "title": "Nearshore Platformed: AI and Industry Transformation",
+    "authors": [],
+    "year": null,
+    "doi": null,
+    "source_url": null,
+    "asset_url": "/ssrn-5188490.pdf",
+    "summary": "=== PAGE 1 === Nearshore Platformed: AI and Industry Transformation Authors: Lonnie McRorey, CEO and Co-Founder, TeamStation Artificial Intelligence LLC Dan Diachenko, COO, and Co-Founder, TeamStation Artificial Intelligence LLC Carolina Acuña, Head of AI, TeamStation Artificial Intelligence LLC Julio Leyva, Head of Platform, TeamStation Artificial Intelligence LLC Cas Rodriguez, People Officer, TeamStation Artificia...",
+    "key_findings": [],
+    "methodology_relevance": null,
+    "extraction": {
+      "tool": "pypdf",
+      "extracted_text_path": "research/extracted/ssrn-5188490.txt",
+      "page_count_detected": 50
+    },
+    "status": "needs_research_review",
+    "ingested_at": "2026-02-17"
+  },
+  {
+    "id": "neuro-psychometric-latam-ai-pipelines-2026-2036",
+    "title": "Neuro Psychometric Alignment of LATAM Engineering Talent in AI Augmented Pipelines (2026 to 2036)",
+    "authors": [
+      "TeamStation Research Group"
+    ],
+    "year": 2026,
+    "doi": null,
+    "source_url": null,
+    "asset_url": "/Neuro Psychometric Alignment of LATAM Engineering Talent in AI Augmented Pipelines (2026 to 2036).pdf",
+    "publication": {
+      "type": "preprint",
+      "distribution": "SSRN",
+      "intended_venue": "IEEE Transactions on Engineering Management",
+      "date": "2026-02"
+    },
+    "summary": "This preprint argues that resume-based engineering hiring is statistically unreliable in AI-augmented software environments and that latent cognitive traits are more predictive of retention and contribution than static skill indicators. Using TeamStation Cortex 3.0.0 across the LATAM-US nearshore corridor, the study reports materially better hiring quality and outcome prediction under calibrated neuro-psychometric evaluation.",
+    "key_findings": [
+      "Static skill indicators had near-zero predictive power for job performance, retention, and system contribution.",
+      "Latent traits such as Architectural Instinct, Problem Solving Agility, Learning Orientation, and Collaborative Cognition explained most observed variance in six-month outcomes.",
+      "False-positive hiring errors decreased from approximately 42% under human screening to 8% under Cortex evaluation.",
+      "False-negative screening errors decreased from approximately 35% to 4%.",
+      "Six-month retention prediction improved from R^2 about 0.15 (human evaluation) to R^2 about 0.72 (Cortex evaluation).",
+      "Language calibration removed major second-language bias effects; translation latency was estimated to account for about 35% of rejected high-quality LATAM candidates."
+    ],
+    "methodology_relevance": "Provides a quantitative validation framework for benchmarking talent-evaluation systems in AI-augmented engineering pipelines, including outcome-linked metrics (false positive/negative rates, retention prediction), language-bias calibration, and psychometric signal extraction methods that can be mapped directly into benchmark validation criteria.",
+    "extraction": {
+      "tool": "pypdf",
+      "extracted_text_path": "research/extracted/neuro-psychometric-latam-ai-pipelines-2026-2036.txt",
+      "page_count_detected": 13
+    },
+    "status": "ready_for_validation_mapping"
+  },
+  {
+    "id": "platforming-the-nearshore-it-industry-book-1",
+    "title": "Platforming the Nearshore IT Staff",
+    "authors": [],
+    "year": null,
+    "doi": null,
+    "source_url": null,
+    "asset_url": "/Platforming the Nearshore IT Industry BOOK (1).pdf",
+    "summary": "=== PAGE 1 === 0 === PAGE 2 === Platforming the Nearshore IT Staff Augmentation Industry Removing the old legacy Nearshore IT Staff Augmentation vendors with intelligent service infrastructure. Authors: Lonnie McRorey Dan Diachenko Carolina Acuña Julio Leyva Cas Rodriguez José Antonio Díaz Marentes TeamStation Artificial Intelligence LLC 1 === PAGE 3 === Preface The quest for exceptional technology talent represents...",
+    "key_findings": [],
+    "methodology_relevance": null,
+    "extraction": {
+      "tool": "pypdf",
+      "extracted_text_path": "research/extracted/platforming-the-nearshore-it-industry-book-1.txt",
+      "page_count_detected": 88
+    },
+    "status": "needs_research_review",
+    "ingested_at": "2026-02-17"
+  },
+  {
+    "id": "ssrn-5253470",
+    "title": "Redefining Software Engineer",
+    "authors": [],
+    "year": null,
+    "doi": null,
+    "source_url": null,
+    "asset_url": "/ssrn-5253470.pdf",
+    "summary": "=== PAGE 1 === Redefining Software Engineer Performance in the AI-Augmented Era: A Value-Centric and Quality-Driven Framework for Evaluation via Intelligent Platform Orchestration Authors Lonnie McRorey Chief Executive Officer (CEO) & Co-Founder TeamStation Artificial Intelligence LLC Dan Diachenko Chief Operating Officer (COO) & Co-Founder TeamStation Artificial Intelligence LLC Carolina Acuna Head of Artificial Int...",
+    "key_findings": [],
+    "methodology_relevance": null,
+    "extraction": {
+      "tool": "pypdf",
+      "extracted_text_path": "research/extracted/ssrn-5253470.txt",
+      "page_count_detected": 43
+    },
+    "status": "needs_research_review",
+    "ingested_at": "2026-02-17"
+  },
+  {
+    "id": "ssrn-5165433",
+    "title": "Redesigning Human Capacity in Nearshore",
+    "authors": [],
+    "year": null,
+    "doi": null,
+    "source_url": null,
+    "asset_url": "/ssrn-5165433.pdf",
+    "summary": "=== PAGE 1 === 0 Redesigning Human Capacity in Nearshore IT Staff Augmentation: An AI-Driven Framework for Enhanced Time-to-Hire and Talent Alignment Authors Lonnie McRorey CEO and Co-Founder TeamStation Artificial Intelligence LLC Dan Diachenko COO and Co-Founder TeamStation Artificial Intelligence LLC Carolina Acuña Head of AI TeamStation Artificial Intelligence LLC Julio Leyva Head of Platform TeamStation Artifici...",
+    "key_findings": [],
+    "methodology_relevance": null,
+    "extraction": {
+      "tool": "pypdf",
+      "extracted_text_path": "research/extracted/ssrn-5165433.txt",
+      "page_count_detected": 24
+    },
+    "status": "needs_research_review",
+    "ingested_at": "2026-02-17"
+  },
+  {
+    "id": "teamstation-ai-redesigning-human-capacity-in-nearshore-it-staff-augmentation-an-ai-driven-framework-for-enhanced-time-to-hire-and-talent-alignment",
+    "title": "Redesigning Human Capacity in Nearshore IT Staff Augmentation: An AI-Driven Framework for Enhanced Time-to-Hire and Talent Alignment",
+    "authors": [],
+    "year": null,
+    "doi": null,
+    "source_url": null,
+    "asset_url": "/TeamStation AI Redesigning Human Capacity in Nearshore IT Staff Augmentation_ An AI-Driven Framework for Enhanced Time-to-Hire and Talent Alignment.md",
+    "summary": "# Redesigning Human Capacity in Nearshore IT Staff Augmentation: An AI-Driven Framework for Enhanced Time-to-Hire and Talent Alignment ## **Authors** Lonnie McRorey CEO and Co-Founder TeamStation Artificial Intelligence LLC Dan Diachenko COO and Co-Founder TeamStation Artificial Intelligence LLC Carolina Acuña Head of AI TeamStation Artificial Intelligence LLC Julio Leyva Head of Platform TeamStation Artificial Intel...",
+    "key_findings": [],
+    "methodology_relevance": null,
+    "extraction": {
+      "tool": "plaintext",
+      "extracted_text_path": "research/extracted/teamstation-ai-redesigning-human-capacity-in-nearshore-it-staff-augmentation-an-ai-driven-framework-for-enhanced-time-to-hire-and-talent-alignment.txt",
+      "page_count_detected": null
+    },
+    "status": "needs_research_review",
+    "ingested_at": "2026-02-17"
+  }
+]

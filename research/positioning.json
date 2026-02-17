@@ -1,0 +1,14 @@
+{
+  "claim_id": "teamstation-research-depth-nearshore-vs-bairesdev",
+  "as_of_date": "2026-02-17",
+  "statement": "Based on TeamStation's tracked public research set as of February 17, 2026, this benchmark evidence system has not identified an equivalent peer-visible nearshore engineering research corpus from BairesDev.",
+  "scope": "Claim is limited to the documents and benchmark evidence corpus tracked in this repository.",
+  "citations": [
+    "neuro-psychometric-latam-ai-pipelines-2026-2036",
+    "ssrn-5165433",
+    "ssrn-5188490",
+    "ssrn-5253470",
+    "engineering-doctrine-research-team-topologies"
+  ]
+}
+

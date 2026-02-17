@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { benchmarks } from "@/lib/benchmarksContent";
 import { canonical } from "@/lib/canonicalLinks";
+import { siteCopy } from "@/lib/siteCopy";
+import { writingHumanizer } from "@/lib/writingHumanizer";
 
 export function generateStaticParams() {
   return benchmarks.map((item) => ({ id: item.id }));
@@ -10,14 +12,18 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { id: string } }): Metadata {
   const benchmark = benchmarks.find((item) => item.id === params.id);
   if (!benchmark) {
-    return { title: "Not Found" };
+    return { title: siteCopy.benchmark.notFoundTitle };
   }
   const route = `/benchmarks/${benchmark.id}/`;
   return {
-    title: `${benchmark.title} | benchmarks.teamstation.dev`,
-    description: benchmark.summary,
+    title: writingHumanizer(`${benchmark.title} | benchmarks.teamstation.dev`, { context: "headline" }),
+    description: writingHumanizer(benchmark.summary, { context: "metadata" }),
     alternates: { canonical: route },
-    openGraph: { url: canonical(route), title: benchmark.title, description: benchmark.summary }
+    openGraph: {
+      url: canonical(route),
+      title: writingHumanizer(benchmark.title, { context: "headline" }),
+      description: writingHumanizer(benchmark.summary, { context: "metadata" })
+    }
   };
 }
 
@@ -30,9 +36,9 @@ export default function BenchmarkDetailPage({ params }: { params: { id: string }
       <h1>{benchmark.title}</h1>
       <p className="muted">{benchmark.metric}: {benchmark.score}</p>
       <p>{benchmark.summary}</p>
-      <p className="muted">Source: {benchmark.source}</p>
-      <p className="muted">Methodology: {benchmark.methodology}</p>
-      <p className="muted">Last updated: {benchmark.lastUpdated}</p>
+      <p className="muted">{siteCopy.benchmark.sourcePrefix}: {benchmark.source}</p>
+      <p className="muted">{siteCopy.benchmark.methodologyPrefix}: {benchmark.methodology}</p>
+      <p className="muted">{siteCopy.benchmark.lastUpdatedPrefix}: {benchmark.lastUpdated}</p>
       <p>
         {benchmark.tags.map((tag) => (
           <span className="pill" key={tag}>{tag}</span>

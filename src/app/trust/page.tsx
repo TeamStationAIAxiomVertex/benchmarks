@@ -1,9 +1,11 @@
+import { siteCopy } from "@/lib/siteCopy";
+
 export default function TrustPage() {
   return (
     <>
-      <h1>Trust</h1>
-      <p>TeamStation benchmark publishing follows transparent methodology, versioned content, and domain verification checks in CI/CD.</p>
-      <p className="muted">Each release validates canonical domain references across robots, sitemap, and exported artifacts.</p>
+      <h1>{siteCopy.trust.title}</h1>
+      <p>{siteCopy.trust.intro}</p>
+      <p className="muted">{siteCopy.trust.detail}</p>
     </>
   );
 }

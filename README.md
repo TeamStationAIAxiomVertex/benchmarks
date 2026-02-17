@@ -59,11 +59,22 @@ Static domain verification:
 npm run verify:static
 ```
 
+Voice enforcement verification:
+
+```sh
+npm run verify:humanizer
+```
+
 Release checklist command:
 
 ```sh
 npm run release:static
 ```
+
+## Writing policy
+
+All user-facing text must be sourced through `src/lib/siteCopy.ts` and transformed by `src/lib/writingHumanizer.ts`.
+`release:static` runs `verify:humanizer` and fails if app routes bypass this copy layer.
 
 ## FTP/SFTP deploy
 
@@ -83,7 +94,7 @@ Optional vars:
 
 ## SEO assets
 
-Generated automatically before build:
+Static files committed in repo:
 - `public/robots.txt`
 - `public/sitemap.xml`
 

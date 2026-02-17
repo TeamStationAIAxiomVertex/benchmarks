@@ -1,13 +1,19 @@
+import { siteCopy } from "@/lib/siteCopy";
+import Link from "next/link";
+
 export default function MethodologyPage() {
   return (
     <>
-      <h1>Methodology</h1>
-      <p>Benchmarks are generated through deterministic, static test scenarios with consistent scoring criteria.</p>
+      <h1>{siteCopy.methodology.title}</h1>
+      <p>{siteCopy.methodology.intro}</p>
       <ul>
-        <li>Common metric framework across all categories</li>
-        <li>Documented sources and update date per record</li>
-        <li>No runtime API dependency in production pages</li>
+        <li>{siteCopy.methodology.bullet1}</li>
+        <li>{siteCopy.methodology.bullet2}</li>
+        <li>{siteCopy.methodology.bullet3}</li>
       </ul>
+      <p>
+        <Link href="/methodology/positioning/">{siteCopy.methodology.positioningCta}</Link>
+      </p>
     </>
   );
 }
