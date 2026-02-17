@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteCopy } from "@/lib/siteCopy";
 
 const links = [
@@ -19,9 +20,7 @@ export function Navbar() {
     <header className="siteHeader">
       <div className="wrap navRow">
         <Link href="/" className="brand">
-          <span className="brandMark" aria-hidden="true">
-            TS
-          </span>
+          <Image src="/logo.png" alt="TeamStation AI" width={28} height={28} className="brandLogo" priority />
           <span>{siteCopy.brand}</span>
         </Link>
         <nav className="navLinks">
