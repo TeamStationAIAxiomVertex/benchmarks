@@ -10,6 +10,8 @@ export const siteCopy = {
     categories: h("Categories", { context: "label" }),
     methodology: h("Methodology", { context: "label" }),
     positioning: h("Positioning", { context: "label" }),
+    architecture: h("Architecture", { context: "label" }),
+    internalLinks: h("Internal Links", { context: "label" }),
     aboutData: h("About Data", { context: "label" }),
     faq: h("FAQ", { context: "label" }),
     trust: h("Trust", { context: "label" })
@@ -71,7 +73,9 @@ export const siteCopy = {
     bullet1: h("Common metric framework across all categories", { context: "body" }),
     bullet2: h("Documented sources and update date per record", { context: "body" }),
     bullet3: h("No runtime API dependency in production pages", { context: "body" }),
-    positioningCta: h("View competitor positioning and evidence", { context: "cta" })
+    positioningCta: h("View competitor positioning and evidence", { context: "cta" }),
+    architectureCta: h("Read domain architecture governance", { context: "cta" }),
+    internalLinksCta: h("Review internal hub-and-spoke link inventory", { context: "cta" })
   },
   aboutData: {
     title: h("About Data", { context: "headline" }),
@@ -119,6 +123,34 @@ export const siteCopy = {
     ),
     citationsTitle: h("Cited TeamStation research records", { context: "headline" }),
     researchIdLabel: h("Research ID", { context: "label" })
+  },
+  architecture: {
+    title: h("TeamStation Domain Architecture", { context: "headline" }),
+    subtitle: h(
+      "Canonical hub-and-spoke model for audience intent separation, security boundaries, and SEO authority compounding.",
+      { context: "body" }
+    ),
+    registryTitle: h("Canonical domain and subdomain registry", { context: "headline" }),
+    rationaleTitle: h("Strategic rationale", { context: "headline" }),
+    governanceTitle: h("Governance requirements", { context: "headline" }),
+    versionLabel: h("Version", { context: "label" }),
+    orgLabel: h("Organization", { context: "label" }),
+    primaryLabel: h("Primary domain", { context: "label" })
+  },
+  internalLinks: {
+    title: h("Internal Link Topology", { context: "headline" }),
+    subtitle: h(
+      "Benchmarks pages route authority into TeamStation hub-and-spoke properties through topic-matched links across articles, research, CTO, and hire clusters.",
+      { context: "body" }
+    ),
+    summaryTitle: h("Inventory summary", { context: "headline" }),
+    asOfLabel: h("As of", { context: "label" }),
+    clusterLabel: h("Cluster", { context: "label" }),
+    countLabel: h("Tracked URLs", { context: "label" }),
+    examplesTitle: h("Representative links used for benchmark modules", { context: "headline" }),
+    relatedTitle: h("Related TeamStation network pages", { context: "headline" }),
+    internalTitle: h("Core internal benchmark links", { context: "headline" }),
+    subdomainTitle: h("Relevant subdomain subpages", { context: "headline" })
   },
   benchmark: {
     indexTitle: h("All Benchmarks", { context: "headline" }),

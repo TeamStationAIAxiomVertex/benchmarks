@@ -202,5 +202,55 @@
     },
     "status": "needs_research_review",
     "ingested_at": "2026-02-17"
+  },
+  {
+    "id": "domain-architecture-v1",
+    "title": "TeamStation AI Official Domain & Subdomain Architecture Document",
+    "authors": [
+      "TeamStation AI"
+    ],
+    "year": 2026,
+    "doi": null,
+    "source_url": null,
+    "asset_url": "/research/domain-architecture-v1.md",
+    "summary": "Canonical governance document defining TeamStation primary domain, subdomain roles, strategic rationale, and rules for new domain initiatives.",
+    "key_findings": [
+      "Hub-and-spoke domain model is mandatory for intent separation and authority compounding.",
+      "Subdomain boundaries are treated as operating model controls, not cosmetic URL choices.",
+      "New initiatives must map to an existing subdomain or justify a new one with explicit non-overlapping semantics."
+    ],
+    "methodology_relevance": "Provides governance constraints for benchmark subsite semantics, cross-linking, and intent isolation.",
+    "extraction": {
+      "tool": "plaintext",
+      "extracted_text_path": "research/domain-architecture-v1.md",
+      "page_count_detected": null
+    },
+    "status": "ready_for_validation_mapping",
+    "ingested_at": "2026-02-17"
+  },
+  {
+    "id": "internal-link-inventory-2026-02-17",
+    "title": "TeamStation Internal Link Inventory",
+    "authors": [
+      "TeamStation AI"
+    ],
+    "year": 2026,
+    "doi": null,
+    "source_url": null,
+    "asset_url": "/research/internal-link-inventory-2026-02-17.md",
+    "summary": "Inventory of hub-and-spoke internal links across TeamStation articles, research, CTO by-country pages, and hire technology pages used for benchmark cross-domain authority routing.",
+    "key_findings": [
+      "Internal link clusters are explicitly segmented by intent and audience.",
+      "Benchmarks subsite routes links to articles, research, CTO, and hire properties by topic relevance.",
+      "Cluster-level URL volumes support scale planning for 500-page benchmark architecture."
+    ],
+    "methodology_relevance": "Defines cross-domain internal linking controls for benchmark page modules and SEO authority flow.",
+    "extraction": {
+      "tool": "plaintext",
+      "extracted_text_path": "research/internal-link-inventory-2026-02-17.md",
+      "page_count_detected": null
+    },
+    "status": "ready_for_validation_mapping",
+    "ingested_at": "2026-02-17"
   }
 ]

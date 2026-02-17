@@ -48,6 +48,11 @@ export const metadata: Metadata = {
     description: siteCopy.metadata.twitterDescription,
     images: ["/og/home.png"]
   },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg"
+  },
   robots: {
     index: true,
     follow: true,

@@ -7,6 +7,8 @@ const links = [
   { href: "/categories/", label: siteCopy.nav.categories },
   { href: "/methodology/", label: siteCopy.nav.methodology },
   { href: "/methodology/positioning/", label: siteCopy.nav.positioning },
+  { href: "/methodology/architecture/", label: siteCopy.nav.architecture },
+  { href: "/methodology/internal-links/", label: siteCopy.nav.internalLinks },
   { href: "/about-data/", label: siteCopy.nav.aboutData },
   { href: "/faq/", label: siteCopy.nav.faq },
   { href: "/trust/", label: siteCopy.nav.trust }
@@ -17,7 +19,10 @@ export function Navbar() {
     <header className="siteHeader">
       <div className="wrap navRow">
         <Link href="/" className="brand">
-          {siteCopy.brand}
+          <span className="brandMark" aria-hidden="true">
+            TS
+          </span>
+          <span>{siteCopy.brand}</span>
         </Link>
         <nav className="navLinks">
           {links.map((item) => (

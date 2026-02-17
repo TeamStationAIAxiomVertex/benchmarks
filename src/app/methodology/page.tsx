@@ -14,6 +14,12 @@ export default function MethodologyPage() {
       <p>
         <Link href="/methodology/positioning/">{siteCopy.methodology.positioningCta}</Link>
       </p>
+      <p>
+        <Link href="/methodology/architecture/">{siteCopy.methodology.architectureCta}</Link>
+      </p>
+      <p>
+        <Link href="/methodology/internal-links/">{siteCopy.methodology.internalLinksCta}</Link>
+      </p>
     </>
   );
 }
