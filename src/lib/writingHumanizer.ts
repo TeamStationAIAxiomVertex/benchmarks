@@ -8,6 +8,7 @@ type HumanizerContext =
 
 type HumanizerOptions = {
   context?: HumanizerContext;
+  profile?: "sclg_v2";
 };
 
 const replacements: Array<[RegExp, string]> = [
@@ -18,11 +19,20 @@ const replacements: Array<[RegExp, string]> = [
 ];
 
 export function writingHumanizer(input: string, options: HumanizerOptions = {}): string {
+  const profile = options.profile ?? "sclg_v2";
   const context = options.context ?? "body";
   let value = input.trim().replace(/\s+/g, " ");
 
   for (const [pattern, replacement] of replacements) {
     value = value.replace(pattern, replacement);
+  }
+
+  if (profile === "sclg_v2") {
+    value = value
+      .replace(/[–—]/g, ", ")
+      .replace(/\s-\s/g, ", ")
+      .replace(/\s{2,}/g, " ")
+      .trim();
   }
 
   if (context === "headline" || context === "brand") {
@@ -35,4 +45,3 @@ export function writingHumanizer(input: string, options: HumanizerOptions = {}):
 
   return value;
 }
-

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { internalLinkGraph, internalLinkInventorySummary } from "@/lib/internalLinkGraph";
+import { discoveredTaxonomy, internalLinkGraph, internalLinkInventorySummary } from "@/lib/internalLinkGraph";
 import { siteCopy } from "@/lib/siteCopy";
 
 export const metadata: Metadata = {
@@ -37,7 +37,19 @@ export default function InternalLinksPage() {
           </li>
         ))}
       </ul>
+
+      <h2>Discovered taxonomy from subdomain URLs</h2>
+      <ul className="list">
+        <li className="listItem">
+          <strong>Countries:</strong> {discoveredTaxonomy.countries.length}
+        </li>
+        <li className="listItem">
+          <strong>Roles:</strong> {discoveredTaxonomy.roles.length}
+        </li>
+        <li className="listItem">
+          <strong>Technologies:</strong> {discoveredTaxonomy.technologies.length}
+        </li>
+      </ul>
     </>
   );
 }
-

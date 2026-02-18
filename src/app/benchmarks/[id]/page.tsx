@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { benchmarks } from "@/lib/benchmarksContent";
 import { canonical } from "@/lib/canonicalLinks";
 import { benchmarkInternalLinks, relatedSubdomainLinks } from "@/lib/internalLinkGraph";
+import { sandlerIntentForBenchmark } from "@/lib/sandlerIntent";
 import { siteCopy } from "@/lib/siteCopy";
 import { writingHumanizer } from "@/lib/writingHumanizer";
 
@@ -33,6 +34,7 @@ export default function BenchmarkDetailPage({ params }: { params: { id: string }
   if (!benchmark) notFound();
   const internal = benchmarkInternalLinks(benchmark.category, benchmark.id);
   const related = relatedSubdomainLinks([benchmark.category, ...benchmark.tags], 3, 5);
+  const sandler = sandlerIntentForBenchmark(benchmark);
 
   return (
     <>
@@ -47,6 +49,13 @@ export default function BenchmarkDetailPage({ params }: { params: { id: string }
           <span className="pill" key={tag}>{tag}</span>
         ))}
       </p>
+      <h2>{siteCopy.benchmark.sandlerTitle}</h2>
+      <ul className="list">
+        <li className="listItem"><strong>{siteCopy.benchmark.sandlerPain}:</strong> {sandler.pain}</li>
+        <li className="listItem"><strong>{siteCopy.benchmark.sandlerImpact}:</strong> {sandler.impact}</li>
+        <li className="listItem"><strong>{siteCopy.benchmark.sandlerFuture}:</strong> {sandler.future}</li>
+        <li className="listItem"><strong>{siteCopy.benchmark.sandlerDecision}:</strong> {sandler.decision}</li>
+      </ul>
 
       {internal.length > 0 && (
         <>

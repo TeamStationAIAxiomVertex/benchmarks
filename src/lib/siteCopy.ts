@@ -157,6 +157,11 @@ export const siteCopy = {
     sourcePrefix: h("Source", { context: "label" }),
     methodologyPrefix: h("Methodology", { context: "label" }),
     lastUpdatedPrefix: h("Last updated", { context: "label" }),
-    notFoundTitle: h("Not Found", { context: "headline" })
+    notFoundTitle: h("Not Found", { context: "headline" }),
+    sandlerTitle: h("Executive intent view", { context: "headline" }),
+    sandlerPain: h("Pain", { context: "label" }),
+    sandlerImpact: h("Impact", { context: "label" }),
+    sandlerFuture: h("Future", { context: "label" }),
+    sandlerDecision: h("Decision", { context: "label" })
   }
 };
