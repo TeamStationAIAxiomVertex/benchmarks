@@ -154,6 +154,12 @@ export const siteCopy = {
   },
   benchmark: {
     indexTitle: h("All Benchmarks", { context: "headline" }),
+    matrixIndexTitle: h("Benchmark Matrix Index", { context: "headline" }),
+    matrixIndexSubtitle: h(
+      "This index lists the 500 generated long form benchmark routes for role country and technology combinations.",
+      { context: "body" }
+    ),
+    matrixIndexCta: h("Open the 500 page benchmark matrix index", { context: "cta" }),
     sourcePrefix: h("Source", { context: "label" }),
     methodologyPrefix: h("Methodology", { context: "label" }),
     lastUpdatedPrefix: h("Last updated", { context: "label" }),
