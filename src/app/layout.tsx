@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { siteCopy } from "@/lib/siteCopy";
 import { writingHumanizer } from "@/lib/writingHumanizer";
 import "./globals.css";
@@ -109,6 +110,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <Navbar />
         <main className="wrap">{children}</main>
+        <Footer />
       </body>
     </html>
   );

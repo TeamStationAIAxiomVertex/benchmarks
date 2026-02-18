@@ -37,7 +37,7 @@ export default function HomePage() {
               <span className="pill">{item.category}</span>
               <span className="pill">{siteCopy.home.updatedPrefix} {item.lastUpdated}</span>
             </p>
-            <Link href={`/benchmarks/${item.id}/`}>{siteCopy.home.openBenchmark}</Link>
+            <Link href={`/benchmarks/record/${item.id}/`}>{siteCopy.home.openBenchmark}</Link>
           </article>
         ))}
       </div>

@@ -25,11 +25,12 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
-  const page = findMatrixPage(params.role, params.country, params.technology);
+export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+  const resolved = await params;
+  const page = findMatrixPage(resolved.role, resolved.country, resolved.technology);
   if (!page) return { title: writingHumanizer("Benchmark Not Found", { context: "headline" }) };
 
-  const route = routeFor(params);
+  const route = routeFor(resolved);
   const title = writingHumanizer(
     `${page.roleTitle} in ${page.countryTitle} for ${page.technologyTitle} Benchmarks`,
     { context: "headline" }
@@ -56,11 +57,12 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   };
 }
 
-export default function MatrixBenchmarkPage({ params }: { params: Params }) {
-  const page = findMatrixPage(params.role, params.country, params.technology);
+export default async function MatrixBenchmarkPage({ params }: { params: Promise<Params> }) {
+  const resolved = await params;
+  const page = findMatrixPage(resolved.role, resolved.country, resolved.technology);
   if (!page) notFound();
 
-  const route = routeFor(params);
+  const route = routeFor(resolved);
   const { sections, words } = buildBenchmarkLongForm(page);
   const internal = benchmarkInternalLinks(page.category, `${page.role}/${page.country}/${page.technology}`);
   const related = relatedSubdomainLinks(page.tags, 3, 5);

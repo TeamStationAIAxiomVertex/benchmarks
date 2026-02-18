@@ -11,12 +11,13 @@ export function generateStaticParams() {
   return benchmarks.map((item) => ({ id: item.id }));
 }
 
-export function generateMetadata({ params }: { params: { id: string } }): Metadata {
-  const benchmark = benchmarks.find((item) => item.id === params.id);
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const benchmark = benchmarks.find((item) => item.id === id);
   if (!benchmark) {
     return { title: siteCopy.benchmark.notFoundTitle };
   }
-  const route = `/benchmarks/${benchmark.id}/`;
+  const route = `/benchmarks/record/${benchmark.id}/`;
   return {
     title: writingHumanizer(`${benchmark.title} | benchmarks.teamstation.dev`, { context: "headline" }),
     description: writingHumanizer(benchmark.summary, { context: "metadata" }),
@@ -29,10 +30,11 @@ export function generateMetadata({ params }: { params: { id: string } }): Metada
   };
 }
 
-export default function BenchmarkDetailPage({ params }: { params: { id: string } }) {
-  const benchmark = benchmarks.find((item) => item.id === params.id);
+export default async function BenchmarkDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const benchmark = benchmarks.find((item) => item.id === id);
   if (!benchmark) notFound();
-  const internal = benchmarkInternalLinks(benchmark.category, benchmark.id);
+  const internal = benchmarkInternalLinks(benchmark.category, `record/${benchmark.id}`);
   const related = relatedSubdomainLinks([benchmark.category, ...benchmark.tags], 3, 5);
   const sandler = sandlerIntentForBenchmark(benchmark);
 

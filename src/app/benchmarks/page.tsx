@@ -13,7 +13,7 @@ export default function BenchmarksIndexPage() {
       <ul className="list">
         {items.map((item) => (
           <li key={item.id} className="listItem">
-            <strong>{item.title}</strong> ({item.score}) - <Link href={`/benchmarks/${item.id}/`}>{siteCopy.categories.openLink}</Link>
+            <strong>{item.title}</strong> ({item.score}) - <Link href={`/benchmarks/record/${item.id}/`}>{siteCopy.categories.openLink}</Link>
           </li>
         ))}
       </ul>

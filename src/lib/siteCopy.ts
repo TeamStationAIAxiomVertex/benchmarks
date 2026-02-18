@@ -169,5 +169,22 @@ export const siteCopy = {
     sandlerImpact: h("Impact", { context: "label" }),
     sandlerFuture: h("Future", { context: "label" }),
     sandlerDecision: h("Decision", { context: "label" })
+  },
+  footer: {
+    linksTitle: h("TeamStation Network Links", { context: "headline" }),
+    trademarkTitle: h("Trademark Statement", { context: "headline" }),
+    trademarkP1: h(
+      "TeamStation AI is the proprietary platform of TeamStation Artificial Intelligence LLC. It operates as an AI driven service infrastructure built for creating, managing, and optimizing high performance nearshore IT teams.",
+      { context: "body" }
+    ),
+    trademarkP2: h(
+      "Unlike traditional vendor models, TeamStation AI combines real time human capacity analytics, predictive performance modeling, and compliance orchestration to deliver an outcome based nearshore model. The platform acts as a Nearshore IT Operations Copilot and gives fast decision visibility, strategic alignment, and predictable execution for CTO and CIO teams.",
+      { context: "body" }
+    ),
+    trademarkP3: h(
+      "Use of the TeamStation AI mark in commerce establishes and reinforces common law trademark rights under United States law.",
+      { context: "body" }
+    ),
+    trademarkP4: h("All rights reserved. Unauthorized use is prohibited.", { context: "body" })
   }
 };
