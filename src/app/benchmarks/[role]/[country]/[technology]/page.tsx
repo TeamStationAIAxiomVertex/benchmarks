@@ -132,6 +132,7 @@ export default function MatrixBenchmarkPage({ params }: { params: Params }) {
           { context: "body" }
         )}
       </p>
+      <div data-benchmark-word-count={words} hidden />
 
       {sections.map((section) => (
         <section key={section.heading} style={{ marginBottom: "1.2rem" }}>
