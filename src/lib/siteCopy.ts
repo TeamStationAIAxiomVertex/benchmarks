@@ -12,6 +12,7 @@ export const siteCopy = {
     positioning: h("Positioning", { context: "label" }),
     architecture: h("Architecture", { context: "label" }),
     internalLinks: h("Internal Links", { context: "label" }),
+    internalDocs: h("Internal Docs", { context: "label" }),
     aboutData: h("About Data", { context: "label" }),
     faq: h("FAQ", { context: "label" }),
     trust: h("Trust", { context: "label" })
@@ -67,24 +68,25 @@ export const siteCopy = {
   methodology: {
     title: h("Methodology", { context: "headline" }),
     intro: h(
-      "Benchmarks are generated through deterministic, static test scenarios with consistent scoring criteria.",
+      "Benchmarks are generated from TeamStation internal research documentation and extracted paper corpus using deterministic static build logic.",
       { context: "body" }
     ),
-    bullet1: h("Common metric framework across all categories", { context: "body" }),
-    bullet2: h("Documented sources and update date per record", { context: "body" }),
-    bullet3: h("No runtime API dependency in production pages", { context: "body" }),
+    bullet1: h("Internal docs pipeline: research/index.json plus extracted source text files", { context: "body" }),
+    bullet2: h("Source-anchored evidence snippets mapped to role, country, and technology routes", { context: "body" }),
+    bullet3: h("Deterministic static export with zero runtime API dependency", { context: "body" }),
     positioningCta: h("View competitor positioning and evidence", { context: "cta" }),
     architectureCta: h("Read domain architecture governance", { context: "cta" }),
-    internalLinksCta: h("Review internal hub-and-spoke link inventory", { context: "cta" })
+    internalLinksCta: h("Review internal hub-and-spoke link inventory", { context: "cta" }),
+    internalDocsCta: h("See internal documentation ingestion status", { context: "cta" })
   },
   aboutData: {
     title: h("About Data", { context: "headline" }),
     intro: h(
-      "Benchmark records are managed as local static content in this repository for deterministic export and release validation.",
+      "Benchmark content is compiled from TeamStation internal research documentation stored in this repository, then exported as static pages.",
       { context: "body" }
     ),
     detail: h(
-      "Content fields include metric definition, source notes, methodology notes, tags, and last updated timestamps.",
+      "Inputs include research index metadata, extracted paper text, methodology mappings, and tagged evidence statements used across benchmark routes.",
       { context: "body" }
     )
   },

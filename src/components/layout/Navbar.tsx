@@ -10,6 +10,7 @@ const links = [
   { href: "/methodology/positioning/", label: siteCopy.nav.positioning },
   { href: "/methodology/architecture/", label: siteCopy.nav.architecture },
   { href: "/methodology/internal-links/", label: siteCopy.nav.internalLinks },
+  { href: "/methodology/internal-docs/", label: siteCopy.nav.internalDocs },
   { href: "/about-data/", label: siteCopy.nav.aboutData },
   { href: "/faq/", label: siteCopy.nav.faq },
   { href: "/trust/", label: siteCopy.nav.trust }

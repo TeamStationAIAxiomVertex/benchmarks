@@ -112,9 +112,9 @@ export function getBenchmarkMatrix(limit = 500): MatrixBenchmarkPage[] {
   const technologies = sortedByPriority(discoveredTaxonomy.technologies, technologyPriorityKeywords, true);
 
   const pages: MatrixBenchmarkPage[] = [];
-  for (const role of roles) {
+  for (const technology of technologies) {
     for (const country of countries) {
-      for (const technology of technologies) {
+      for (const role of roles) {
         const category = categoryFromTechnology(technology);
         pages.push({
           role,
@@ -137,4 +137,3 @@ export function getBenchmarkMatrix(limit = 500): MatrixBenchmarkPage[] {
 export function findMatrixPage(role: string, country: string, technology: string) {
   return getBenchmarkMatrix().find((item) => item.role === role && item.country === country && item.technology === technology);
 }
-

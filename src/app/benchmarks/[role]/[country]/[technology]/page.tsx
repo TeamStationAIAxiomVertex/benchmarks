@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { BenchmarkSection } from "@/components/benchmark/BenchmarkSection";
+import { BenchmarkSignalBar } from "@/components/benchmark/BenchmarkSignalBar";
+import { DecisionFrameworkBlock } from "@/components/benchmark/DecisionFrameworkBlock";
+import { EvidencePanel } from "@/components/benchmark/EvidencePanel";
+import { ExecutiveSignalCard } from "@/components/benchmark/ExecutiveSignalCard";
 import { buildBenchmarkLongForm } from "@/lib/benchmarkPageFactory";
 import { findMatrixPage, getBenchmarkMatrix } from "@/lib/benchmarkMatrix";
 import { canonical } from "@/lib/canonicalLinks";
 import { benchmarkInternalLinks, relatedSubdomainLinks } from "@/lib/internalLinkGraph";
+import { researchCorpusStats } from "@/lib/researchCorpus";
 import { siteCopy } from "@/lib/siteCopy";
 import { writingHumanizer } from "@/lib/writingHumanizer";
 
@@ -66,6 +72,26 @@ export default async function MatrixBenchmarkPage({ params }: { params: Promise<
   const { sections, words } = buildBenchmarkLongForm(page);
   const internal = benchmarkInternalLinks(page.category, `${page.role}/${page.country}/${page.technology}`);
   const related = relatedSubdomainLinks(page.tags, 3, 5);
+  const corpus = researchCorpusStats();
+  const citedSources = Array.from(
+    new Set(
+      sections
+        .flatMap((section) => section.paragraphs)
+        .flatMap((text) => {
+          const matches = text.match(/Source:\s([^.;]+[.;]?)/g);
+          if (!matches) return [];
+          return matches.map((item) => item.replace(/^Source:\s*/, "").replace(/[.;]$/, "").trim());
+        })
+    )
+  );
+  const decisionSection = sections.find((s) => s.heading.toLowerCase().includes("decision framework"));
+  const mainSections = sections.filter((s) => !s.heading.toLowerCase().includes("decision framework"));
+  const riskForSection = (title: string) => {
+    const value = title.toLowerCase();
+    if (value.includes("risk")) return "critical" as const;
+    if (value.includes("performance")) return "watch" as const;
+    return "strong" as const;
+  };
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -127,46 +153,66 @@ export default async function MatrixBenchmarkPage({ params }: { params: Promise<
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <h1>{writingHumanizer(`${page.roleTitle} ${page.countryTitle} ${page.technologyTitle} Benchmarks`, { context: "headline" })}</h1>
-      <p className="muted">
-        {writingHumanizer(
-          `This page is generated as a long form benchmark signal with ${words} words and section level evidence architecture for static export.`,
-          { context: "body" }
-        )}
-      </p>
-      <div data-benchmark-word-count={words} hidden />
+      <article className="card benchmarkHero">
+        <h1>{writingHumanizer(`${page.roleTitle} ${page.countryTitle} ${page.technologyTitle} Benchmarks`, { context: "headline" })}</h1>
+        <h2>{writingHumanizer("Benchmark Overview", { context: "headline" })}</h2>
+        <h3>{writingHumanizer("Validated long form benchmark summary", { context: "headline" })}</h3>
+        <p className="muted">
+          {writingHumanizer(
+            `This page is generated as a long form benchmark signal with ${words} words and section level evidence architecture for static export.`,
+            { context: "body" }
+          )}
+        </p>
+        <div data-benchmark-word-count={words} hidden />
+      </article>
 
-      {sections.map((section) => (
-        <section key={section.heading} style={{ marginBottom: "1.2rem" }}>
-          <h2>{section.heading}</h2>
-          <h3>{section.subheading}</h3>
-          {section.paragraphs.map((text, idx) => (
-            <p key={`${section.heading}-${idx}`}>{text}</p>
-          ))}
-        </section>
+      <BenchmarkSignalBar
+        words={words}
+        sources={citedSources}
+        sourceCount={corpus.sourceCount}
+        recordsCount={corpus.recordsCount}
+        generatedAt={corpus.generatedAt}
+      />
+
+      <ExecutiveSignalCard
+        title={siteCopy.benchmark.sandlerTitle}
+        subtitle={writingHumanizer("Pain impact future and decision trigger", { context: "headline" })}
+        pain={writingHumanizer(`Leaders need verified ${page.category} signals before scaling ${page.roleTitle} delivery in ${page.countryTitle}.`, {
+          context: "body"
+        })}
+        impact={writingHumanizer(`Without clear signal quality, ${page.technologyTitle} roadmap decisions can increase delivery risk and operating cost.`, {
+          context: "body"
+        })}
+        future={writingHumanizer(`A structured benchmark model supports faster planning alignment across engineering, finance, and operations.`, {
+          context: "body"
+        })}
+        decision={writingHumanizer(`Use this page to gate scale decisions and assign concrete operating actions this cycle.`, { context: "body" })}
+      />
+
+      {mainSections.map((section) => (
+        <BenchmarkSection
+          key={section.heading}
+          title={section.heading}
+          subtitle={section.subheading}
+          paragraphs={section.paragraphs}
+          risk={riskForSection(section.heading)}
+          collapsibleEvidence={section.heading.toLowerCase().includes("evidence appendix")}
+        />
       ))}
 
-      <section style={{ marginBottom: "1.2rem" }}>
-        <h2>{siteCopy.internalLinks.internalTitle}</h2>
-        <ul className="list">
-          {internal.slice(0, 3).map((item) => (
-            <li key={item.href} className="listItem">
-              <a href={item.href}>{item.label}</a>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {decisionSection && <DecisionFrameworkBlock lines={decisionSection.paragraphs.slice(0, 6)} />}
 
-      <section>
-        <h2>{siteCopy.internalLinks.subdomainTitle}</h2>
-        <ul className="list">
-          {related.map((item) => (
-            <li key={item.url} className="listItem">
-              <a href={item.url}>{item.title}</a>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <EvidencePanel
+        title={siteCopy.internalLinks.internalTitle}
+        subtitle={writingHumanizer("Internal benchmark mesh links", { context: "headline" })}
+        links={internal.slice(0, 3).map((item) => ({ href: item.href, label: item.label }))}
+      />
+
+      <EvidencePanel
+        title={siteCopy.internalLinks.subdomainTitle}
+        subtitle={writingHumanizer("Relevant TeamStation subdomain references", { context: "headline" })}
+        links={related.map((item) => ({ href: item.url, label: item.title }))}
+      />
     </>
   );
 }

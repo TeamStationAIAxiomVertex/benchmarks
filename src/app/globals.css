@@ -88,6 +88,12 @@ body::before {
 main { padding: 2rem 0 3rem; }
 h1 { font-size: clamp(1.75rem, 4vw, 2.8rem); line-height: 1.1; margin: 0 0 0.75rem; }
 h2 { margin: 0.2rem 0 0.6rem; }
+h3 {
+  margin: 0.15rem 0 0.6rem;
+  color: #9ecaf0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 600;
+}
 p { margin: 0 0 0.8rem; }
 .muted { color: var(--muted); }
 
@@ -101,6 +107,83 @@ p { margin: 0 0 0.8rem; }
   backdrop-filter: blur(12px);
 }
 .card a { color: var(--accent); text-decoration: none; }
+.benchmarkHero { margin-bottom: 1rem; }
+.benchmarkSection { margin-bottom: 1rem; }
+.signalBar {
+  border-color: rgba(84, 233, 255, 0.52);
+  background: linear-gradient(155deg, rgba(10, 36, 68, 0.76), rgba(8, 24, 42, 0.64));
+}
+.signalGrid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.signalMetric {
+  margin: 0;
+  border: 1px solid rgba(77, 151, 238, 0.45);
+  border-radius: 0.65rem;
+  padding: 0.55rem 0.6rem;
+  background: rgba(16, 41, 79, 0.52);
+  display: grid;
+  gap: 0.18rem;
+}
+.signalLabel {
+  color: #9ec7ea;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.7rem;
+}
+.riskIndicator {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.risk-strong {
+  color: #b9ffe8;
+  background: rgba(27, 132, 104, 0.26);
+  border-color: rgba(60, 199, 152, 0.45);
+}
+.risk-watch {
+  color: #ffe8ad;
+  background: rgba(147, 100, 18, 0.22);
+  border-color: rgba(255, 202, 96, 0.48);
+}
+.risk-critical {
+  color: #ffd1d1;
+  background: rgba(142, 40, 40, 0.25);
+  border-color: rgba(255, 126, 126, 0.5);
+}
+.signalCard {
+  border-color: rgba(85, 191, 255, 0.5);
+}
+.signalList {
+  margin: 0.6rem 0 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+.evidencePanel {
+  border: 1px solid rgba(90, 156, 237, 0.4);
+  border-radius: 0.55rem;
+  padding: 0.6rem;
+  background: rgba(11, 29, 57, 0.5);
+}
+.evidencePanel summary {
+  cursor: pointer;
+  color: #a7dbff;
+  font-weight: 600;
+}
 
 a {
   color: var(--accent);

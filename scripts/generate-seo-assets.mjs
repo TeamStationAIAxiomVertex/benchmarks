@@ -207,9 +207,9 @@ function matrixRoutes(limit = 500) {
   const sortedCountries = sortedByPriority(countries, countryPriority);
   const sortedTechnologies = sortedByPriority(technologies, technologyPriorityKeywords, true);
 
-  for (const role of sortedRoles) {
+  for (const technology of sortedTechnologies) {
     for (const country of sortedCountries) {
-      for (const technology of sortedTechnologies) {
+      for (const role of sortedRoles) {
         out.push(`/benchmarks/${role}/${country}/${technology}/`);
         if (out.length >= limit) return out;
       }
@@ -230,6 +230,7 @@ const staticRoutes = [
   "/methodology/positioning/",
   "/methodology/architecture/",
   "/methodology/internal-links/",
+  "/methodology/internal-docs/",
   "/about-data/",
   "/faq/",
   "/trust/"
