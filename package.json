@@ -10,12 +10,15 @@
     "dev": "next dev --turbopack -p 9003",
     "build": "node scripts/generate-research-insights.mjs && node scripts/generate-seo-assets.mjs && next build && node scripts/prepare-static-build.mjs",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint --max-warnings=0",
+    "format": "prettier --check .",
+    "format:write": "prettier --write .",
     "typecheck": "tsc --noEmit --incremental false",
     "verify:humanizer": "node scripts/verify-humanizer-usage.mjs",
     "verify:corpus": "node scripts/verify-research-corpus.mjs",
     "verify:static": "bash scripts/verify-static-domain.sh",
-    "release:static": "npm run typecheck && npm run lint && npm run verify:humanizer && npm run verify:corpus && npm run build && npm run verify:static",
+    "validate": "npm run typecheck && npm run lint && npm run format && npm run verify:humanizer && npm run verify:corpus",
+    "release:static": "npm run validate && npm run build && npm run verify:static",
     "seed:500": "node scripts/seed-benchmarks.js 500 --reset",
     "seed": "node scripts/seed-benchmarks.js",
     "deploy:ftp": "./scripts/deploy-ftp.sh"
@@ -29,6 +32,10 @@
     "@types/node": "22.13.1",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
+    "eslint": "^9.21.0",
+    "eslint-config-next": "15.1.6",
+    "eslint-config-prettier": "^10.0.1",
+    "prettier": "^3.5.3",
     "typescript": "5.7.3"
   }
 }

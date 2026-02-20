@@ -53,6 +53,12 @@ Build static export + SEO assets + build artifact:
 npm run build
 ```
 
+Validate code quality and content checks before release:
+
+```sh
+npm run validate
+```
+
 Static domain verification:
 
 ```sh
@@ -75,6 +81,22 @@ npm run release:static
 
 All user-facing text must be sourced through `src/lib/siteCopy.ts` and transformed by `src/lib/writingHumanizer.ts`.
 `release:static` runs `verify:humanizer` and fails if app routes bypass this copy layer.
+
+## Local setup for clean builds
+
+1. Install Node.js 20+.
+2. Install dependencies:
+
+```sh
+npm install
+```
+
+3. Install recommended VS Code extensions when prompted (from `.vscode/extensions.json`).
+4. Run validation before building:
+
+```sh
+npm run validate
+```
 
 ## FTP/SFTP deploy
 
