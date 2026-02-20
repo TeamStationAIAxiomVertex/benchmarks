@@ -43,7 +43,9 @@ export const siteCopy = {
     ),
     positioningCta: h("Read positioning evidence", { context: "cta" }),
     topRecords: h("Top Records", { context: "headline" }),
+    researchTitle: h("Science Papers and Research Records", { context: "headline" }),
     viewCategory: h("View category", { context: "cta" }),
+    openResearch: h("Open research record", { context: "cta" }),
     openBenchmark: h("Open benchmark", { context: "cta" }),
     updatedPrefix: h("updated", { context: "label" })
   },
@@ -233,7 +235,16 @@ export const siteCopy = {
     noFindings: h("No curated key findings are mapped for this document yet.", { context: "body" }),
     noRelevance: h("Methodology relevance is not yet mapped for this document.", { context: "body" }),
     noInsights: h("No extracted snippet records are available yet for this document.", { context: "body" }),
-    sourceDocumentTitle: h("Source Document Metadata", { context: "headline" })
+    sourceDocumentTitle: h("Source Document Metadata", { context: "headline" }),
+    searchLabel: h("Search papers", { context: "label" }),
+    searchPlaceholder: h("Search title summary findings or id", { context: "label" }),
+    statusFilterLabel: h("Status filter", { context: "label" }),
+    allStatuses: h("All statuses", { context: "label" }),
+    sortLabel: h("Sort", { context: "label" }),
+    sortRecentIngested: h("Most recent ingestion", { context: "label" }),
+    sortTitle: h("Title A to Z", { context: "label" }),
+    showingPrefix: h("Showing", { context: "label" }),
+    loadMore: h("Load more research records", { context: "cta" })
   },
   footer: {
     linksTitle: h("TeamStation Network Links", { context: "headline" }),

@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { benchmarks, categoryMeta } from "@/lib/benchmarksContent";
+import { researchDocuments } from "@/lib/researchDocuments";
 import { siteCopy } from "@/lib/siteCopy";
 
 export default function HomePage() {
   const top = [...benchmarks].sort((a, b) => b.score - a.score).slice(0, 18);
+  const researchTop = researchDocuments.slice(0, 6);
 
   return (
     <>
@@ -25,6 +27,20 @@ export default function HomePage() {
         <p>{siteCopy.home.positioningBody}</p>
         <Link href="/methodology/positioning/">{siteCopy.home.positioningCta}</Link>
       </article>
+
+      <h2>{siteCopy.home.researchTitle}</h2>
+      <div className="grid" style={{ marginBottom: "1.2rem" }}>
+        {researchTop.map((doc) => (
+          <article key={doc.id} className="card">
+            <h3>{doc.title}</h3>
+            <p className="muted">
+              {doc.status ? `${siteCopy.internalDocs.statusLabel}: ${doc.status}` : ""}
+              {typeof doc.year === "number" ? ` · ${siteCopy.internalDocs.yearLabel}: ${doc.year}` : ""}
+            </p>
+            <Link href={`/methodology/internal-docs/${doc.id}/`}>{siteCopy.home.openResearch}</Link>
+          </article>
+        ))}
+      </div>
 
       <h2>{siteCopy.home.topRecords}</h2>
       <div className="grid">
