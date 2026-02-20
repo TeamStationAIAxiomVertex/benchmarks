@@ -13,7 +13,8 @@ Static Next.js export site for TeamStation benchmark content.
 
 - `/`
 - `/benchmarks/`
-- `/benchmarks/[id]/` (500 static pages)
+- `/benchmarks/matrix/`
+- `/benchmarks/[role]/[country]/[technology]/` (500 static pages)
 - `/categories/`
 - `/categories/engineering-velocity/`
 - `/categories/cost-efficiency/`

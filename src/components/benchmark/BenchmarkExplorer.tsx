@@ -107,7 +107,7 @@ export function BenchmarkExplorer({
         {visible.map((item) => (
           <li key={item.id} className="listItem">
             <strong>{item.title}</strong> ({item.score}) -{" "}
-            <Link href={`/benchmarks/record/${item.id}/`}>{siteCopy.categories.openLink}</Link>
+            <Link href={`/benchmarks/matrix/?q=${encodeURIComponent(item.title)}`}>{siteCopy.categories.openLink}</Link>
           </li>
         ))}
       </ul>

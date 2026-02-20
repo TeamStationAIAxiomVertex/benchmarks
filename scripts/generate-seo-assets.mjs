@@ -1,9 +1,6 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
 
 const siteUrl = "https://benchmarks.teamstation.dev";
-
-const benchmarksRaw = await readFile("src/data/benchmarks.json", "utf8");
-const benchmarks = JSON.parse(benchmarksRaw);
 
 const countryPriority = [
   "mexico",
@@ -236,8 +233,7 @@ const staticRoutes = [
   "/trust/"
 ];
 
-const benchmarkRoutes = benchmarks.map((item) => `/benchmarks/record/${item.id}/`);
-const urls = [...staticRoutes, ...benchmarkRoutes, ...matrixRoutes(500)];
+const urls = [...staticRoutes, ...matrixRoutes(500)];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
   .map((path) => `  <url><loc>${siteUrl}${path}</loc></url>`)

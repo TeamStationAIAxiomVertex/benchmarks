@@ -15,7 +15,7 @@ import { siteCopy } from "@/lib/siteCopy";
 import { writingHumanizer } from "@/lib/writingHumanizer";
 
 export function generateStaticParams() {
-  return benchmarks.map((item) => ({ id: item.id }));
+  return [];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
