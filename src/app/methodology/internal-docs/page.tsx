@@ -1,10 +1,12 @@
+import Link from "next/link";
 import { researchCorpusStats } from "@/lib/researchCorpus";
+import { researchDocuments, statusSummaryForResearchDocuments } from "@/lib/researchDocuments";
 import { siteCopy } from "@/lib/siteCopy";
-import researchIndex from "../../../../research/index.json";
 
 export default function InternalDocsMethodologyPage() {
   const stats = researchCorpusStats();
-  const docs = (researchIndex as Array<{ id: string; title: string; status?: string }>).slice(0, 40);
+  const docs = researchDocuments.slice(0, 60);
+  const statusRows = statusSummaryForResearchDocuments();
 
   return (
     <>
@@ -30,13 +32,21 @@ export default function InternalDocsMethodologyPage() {
         <p className="muted">
           {siteCopy.internalDocs.sourcePrefix}: <code>research/index.json</code>
         </p>
+        <p className="muted">
+          {statusRows.map((row) => `${row.status} (${row.count})`).join(" · ")}
+        </p>
         <ul className="list">
           {docs.map((doc) => (
             <li className="listItem" key={doc.id}>
               <strong>{doc.title}</strong>
               <p className="muted" style={{ marginTop: "0.4rem" }}>
-                {siteCopy.internalDocs.idLabel}: {doc.id} {doc.status ? `| ${siteCopy.internalDocs.statusLabel}: ${doc.status}` : ""}
+                {siteCopy.internalDocs.idLabel}: {doc.id}
+                {doc.status ? ` | ${siteCopy.internalDocs.statusLabel}: ${doc.status}` : ""}
+                {doc.ingested_at ? ` | ${siteCopy.internalDocs.ingestedAtLabel}: ${doc.ingested_at}` : ""}
+                {typeof doc.year === "number" ? ` | ${siteCopy.internalDocs.yearLabel}: ${doc.year}` : ""}
+                {doc.key_findings ? ` | ${siteCopy.internalDocs.findingsLabel}: ${doc.key_findings.length}` : ""}
               </p>
+              <Link href={`/methodology/internal-docs/${doc.id}/`}>{siteCopy.internalDocs.openRecord}</Link>
             </li>
           ))}
         </ul>
