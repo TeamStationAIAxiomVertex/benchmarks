@@ -77,7 +77,8 @@ export const siteCopy = {
     positioningCta: h("View competitor positioning and evidence", { context: "cta" }),
     architectureCta: h("Read domain architecture governance", { context: "cta" }),
     internalLinksCta: h("Review internal hub-and-spoke link inventory", { context: "cta" }),
-    internalDocsCta: h("See internal documentation ingestion status", { context: "cta" })
+    internalDocsCta: h("See internal documentation ingestion status", { context: "cta" }),
+    corpusSnapshotPrefix: h("Corpus snapshot", { context: "label" })
   },
   aboutData: {
     title: h("About Data", { context: "headline" }),
@@ -88,7 +89,9 @@ export const siteCopy = {
     detail: h(
       "Inputs include research index metadata, extracted paper text, methodology mappings, and tagged evidence statements used across benchmark routes.",
       { context: "body" }
-    )
+    ),
+    currentCorpusPrefix: h("Current corpus", { context: "label" }),
+    indexedDocsLabel: h("indexed internal documents", { context: "label" })
   },
   faq: {
     title: h("FAQ", { context: "headline" }),
@@ -152,7 +155,11 @@ export const siteCopy = {
     examplesTitle: h("Representative links used for benchmark modules", { context: "headline" }),
     relatedTitle: h("Related TeamStation network pages", { context: "headline" }),
     internalTitle: h("Core internal benchmark links", { context: "headline" }),
-    subdomainTitle: h("Relevant subdomain subpages", { context: "headline" })
+    subdomainTitle: h("Relevant subdomain subpages", { context: "headline" }),
+    taxonomyTitle: h("Discovered taxonomy from subdomain URLs", { context: "headline" }),
+    countriesLabel: h("Countries", { context: "label" }),
+    rolesLabel: h("Roles", { context: "label" }),
+    technologiesLabel: h("Technologies", { context: "label" })
   },
   benchmark: {
     indexTitle: h("All Benchmarks", { context: "headline" }),
@@ -170,7 +177,45 @@ export const siteCopy = {
     sandlerPain: h("Pain", { context: "label" }),
     sandlerImpact: h("Impact", { context: "label" }),
     sandlerFuture: h("Future", { context: "label" }),
-    sandlerDecision: h("Decision", { context: "label" })
+    sandlerDecision: h("Decision", { context: "label" }),
+    explorer: {
+      searchLabel: h("Search", { context: "label" }),
+      searchPlaceholder: h("Search title summary or tags", { context: "label" }),
+      categoryLabel: h("Category", { context: "label" }),
+      allCategories: h("All categories", { context: "label" }),
+      sortLabel: h("Sort", { context: "label" }),
+      sortScoreDesc: h("Score high to low", { context: "label" }),
+      sortScoreAsc: h("Score low to high", { context: "label" }),
+      sortUpdatedDesc: h("Most recent updates", { context: "label" }),
+      sortTitleAsc: h("Title A to Z", { context: "label" }),
+      showingPrefix: h("Showing", { context: "label" }),
+      loadMore: h("Load more benchmarks", { context: "cta" })
+    },
+    matrixExplorer: {
+      searchLabel: h("Search routes", { context: "label" }),
+      searchPlaceholder: h("Search role country or technology", { context: "label" }),
+      categoryLabel: h("Category", { context: "label" }),
+      allCategories: h("All categories", { context: "label" }),
+      sortLabel: h("Sort", { context: "label" }),
+      sortRoleCountryTech: h("Role country technology", { context: "label" }),
+      sortCategory: h("Category then path", { context: "label" }),
+      showingPrefix: h("Showing", { context: "label" }),
+      loadMore: h("Load more routes", { context: "cta" })
+    }
+  },
+  internalDocs: {
+    title: h("Internal Documentation Ingestion", { context: "headline" }),
+    intro: h(
+      "Benchmarks are generated from internal TeamStation research documents and extracted source files during build.",
+      { context: "body" }
+    ),
+    corpusRecordsTitle: h("Corpus Records", { context: "headline" }),
+    sourceDocumentsTitle: h("Source Documents", { context: "headline" }),
+    generatedTitle: h("Generated", { context: "headline" }),
+    indexedDocsTitle: h("Indexed Internal Documents", { context: "headline" }),
+    sourcePrefix: h("Source", { context: "label" }),
+    idLabel: h("id", { context: "label" }),
+    statusLabel: h("status", { context: "label" })
   },
   footer: {
     linksTitle: h("TeamStation Network Links", { context: "headline" }),

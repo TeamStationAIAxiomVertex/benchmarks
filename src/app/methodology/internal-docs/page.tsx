@@ -1,4 +1,5 @@
 import { researchCorpusStats } from "@/lib/researchCorpus";
+import { siteCopy } from "@/lib/siteCopy";
 import researchIndex from "../../../../research/index.json";
 
 export default function InternalDocsMethodologyPage() {
@@ -7,36 +8,34 @@ export default function InternalDocsMethodologyPage() {
 
   return (
     <>
-      <h1>Internal Documentation Ingestion</h1>
-      <p>
-        Benchmarks are generated from internal TeamStation research documents and extracted source files during build.
-      </p>
+      <h1>{siteCopy.internalDocs.title}</h1>
+      <p>{siteCopy.internalDocs.intro}</p>
       <div className="grid" style={{ marginBottom: "1rem" }}>
         <article className="card">
-          <h2>Corpus Records</h2>
+          <h2>{siteCopy.internalDocs.corpusRecordsTitle}</h2>
           <p className="muted">{stats.recordsCount}</p>
         </article>
         <article className="card">
-          <h2>Source Documents</h2>
+          <h2>{siteCopy.internalDocs.sourceDocumentsTitle}</h2>
           <p className="muted">{stats.sourceCount}</p>
         </article>
         <article className="card">
-          <h2>Generated</h2>
+          <h2>{siteCopy.internalDocs.generatedTitle}</h2>
           <p className="muted">{stats.generatedAt}</p>
         </article>
       </div>
 
       <section className="card">
-        <h2>Indexed Internal Documents</h2>
+        <h2>{siteCopy.internalDocs.indexedDocsTitle}</h2>
         <p className="muted">
-          Source: <code>research/index.json</code>
+          {siteCopy.internalDocs.sourcePrefix}: <code>research/index.json</code>
         </p>
         <ul className="list">
           {docs.map((doc) => (
             <li className="listItem" key={doc.id}>
               <strong>{doc.title}</strong>
               <p className="muted" style={{ marginTop: "0.4rem" }}>
-                id: {doc.id} {doc.status ? `| status: ${doc.status}` : ""}
+                {siteCopy.internalDocs.idLabel}: {doc.id} {doc.status ? `| ${siteCopy.internalDocs.statusLabel}: ${doc.status}` : ""}
               </p>
             </li>
           ))}

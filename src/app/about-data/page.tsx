@@ -9,7 +9,7 @@ export default function AboutDataPage() {
       <p>{siteCopy.aboutData.intro}</p>
       <p className="muted">{siteCopy.aboutData.detail}</p>
       <p className="muted">
-        Current corpus: {stats.recordsCount} records from {stats.sourceCount} indexed internal documents.
+        {siteCopy.aboutData.currentCorpusPrefix}: {stats.recordsCount} records from {stats.sourceCount} {siteCopy.aboutData.indexedDocsLabel}.
       </p>
     </>
   );

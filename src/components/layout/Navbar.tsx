@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { siteCopy } from "@/lib/siteCopy";
 
 const links = [
@@ -17,6 +20,12 @@ const links = [
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
+
   return (
     <header className="siteHeader">
       <div className="wrap navRow">
@@ -26,7 +35,7 @@ export function Navbar() {
         </Link>
         <nav className="navLinks">
           {links.map((item) => (
-            <Link key={item.href} href={item.href}>
+            <Link key={item.href} href={item.href} className={isActive(item.href) ? "active" : undefined}>
               {item.label}
             </Link>
           ))}

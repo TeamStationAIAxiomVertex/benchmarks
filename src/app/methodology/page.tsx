@@ -9,7 +9,7 @@ export default function MethodologyPage() {
       <h1>{siteCopy.methodology.title}</h1>
       <p>{siteCopy.methodology.intro}</p>
       <p className="muted">
-        Corpus snapshot: {stats.recordsCount} evidence records from {stats.sourceCount} internal documents, generated {stats.generatedAt}.
+        {siteCopy.methodology.corpusSnapshotPrefix}: {stats.recordsCount} evidence records from {stats.sourceCount} internal documents, generated {stats.generatedAt}.
       </p>
       <ul>
         <li>{siteCopy.methodology.bullet1}</li>

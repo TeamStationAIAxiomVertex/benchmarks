@@ -38,16 +38,16 @@ export default function InternalLinksPage() {
         ))}
       </ul>
 
-      <h2>Discovered taxonomy from subdomain URLs</h2>
+      <h2>{siteCopy.internalLinks.taxonomyTitle}</h2>
       <ul className="list">
         <li className="listItem">
-          <strong>Countries:</strong> {discoveredTaxonomy.countries.length}
+          <strong>{siteCopy.internalLinks.countriesLabel}:</strong> {discoveredTaxonomy.countries.length}
         </li>
         <li className="listItem">
-          <strong>Roles:</strong> {discoveredTaxonomy.roles.length}
+          <strong>{siteCopy.internalLinks.rolesLabel}:</strong> {discoveredTaxonomy.roles.length}
         </li>
         <li className="listItem">
-          <strong>Technologies:</strong> {discoveredTaxonomy.technologies.length}
+          <strong>{siteCopy.internalLinks.technologiesLabel}:</strong> {discoveredTaxonomy.technologies.length}
         </li>
       </ul>
     </>
