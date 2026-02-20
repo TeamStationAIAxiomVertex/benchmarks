@@ -8,6 +8,7 @@ import { siteCopy } from "@/lib/siteCopy";
 const links = [
   { href: "/", label: siteCopy.nav.home },
   { href: "/benchmarks/", label: siteCopy.nav.benchmarks },
+  { href: "/benchmarks/matrix/", label: siteCopy.nav.matrix500 },
   { href: "/categories/", label: siteCopy.nav.categories },
   { href: "/methodology/", label: siteCopy.nav.methodology },
   { href: "/methodology/positioning/", label: siteCopy.nav.positioning },
@@ -23,6 +24,7 @@ export function Navbar() {
   const pathname = usePathname();
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
+    if (href === "/benchmarks/" && pathname.startsWith("/benchmarks/matrix/")) return false;
     return pathname.startsWith(href);
   };
 

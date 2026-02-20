@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { type BenchmarkCategory } from "@/lib/benchmarksContent";
 import { type MatrixBenchmarkPage } from "@/lib/benchmarkMatrix";
@@ -14,10 +15,16 @@ type MatrixRouteExplorerProps = {
 };
 
 export function MatrixRouteExplorer({ pages, initialVisibleCount = 80 }: MatrixRouteExplorerProps) {
+  const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<BenchmarkCategory | "all">("all");
   const [sortMode, setSortMode] = useState<SortMode>("role-country-tech");
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
+
+  useEffect(() => {
+    const value = searchParams.get("q");
+    if (value) setQuery(value);
+  }, [searchParams]);
 
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
