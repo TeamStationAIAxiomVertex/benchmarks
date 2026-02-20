@@ -90,13 +90,20 @@ export function selectResearchSnippets(input: {
 
   const selected: ResearchRecord[] = [];
   let cursor = hashString(input.seed) % pool.length;
+  let stuck = 0;
   while (selected.length < input.limit && selected.length < pool.length) {
+    const prev = selected.length;
     const candidate = pool[cursor % pool.length];
     if (!selected.find((item) => item.id === candidate.id)) {
       selected.push(candidate);
       used.add(candidate.id);
     }
     cursor += 7;
+    if (selected.length === prev) {
+      if (++stuck > pool.length) break;
+    } else {
+      stuck = 0;
+    }
   }
 
   return selected;
